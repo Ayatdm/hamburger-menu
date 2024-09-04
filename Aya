@@ -1,0 +1,97 @@
+ <div class="col-md-8 right-section">
+        <div class="hamburger-menu">
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <nav class="menu-nav" style="height: 796px;margin-left: 82px;width: 95%;">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+
+css
+.hamburger-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .menu-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 206px;
+    display: none;
+  }
+  
+  .menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-nav ul li a {
+    text-decoration: none;
+   color: #888;
+   font-size: 39px; 
+    display: block;
+    padding: 10px;
+     text-align: center;
+  }
+  
+  .menu-nav ul li a:hover {
+     color: #fff;
+  }
+  
+
+  input[type="checkbox"]:checked ~ .menu-nav {
+    display: block;
+  }
+  
+  input[type="checkbox"]:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  
+  input[type="checkbox"]:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  input[type="checkbox"]:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
